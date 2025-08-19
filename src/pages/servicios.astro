@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<BaseLayout title="Servicios - MOVEO" description="Conoce nuestros programas de salud integral para adultos mayores: clases presenciales, grupales y a domicilio.">
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-heading font-bold text-moveo-deep-blue mb-6">
+          Nuestros servicios
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Programas especializados diseñados para mejorar la salud integral del adulto mayor
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <!-- Clases Presenciales -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="w-16 h-16 bg-moveo-yellow rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-moveo-deep-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-heading font-bold text-moveo-deep-blue mb-4">
+            Clases presenciales
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Sesiones grupales con énfasis en seguridad y progreso individual. Ambiente controlado y profesional.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Equipos especializados y seguros
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Supervisión profesional constante
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Interacción social con otros participantes
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sesiones Grupales -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="w-16 h-16 bg-moveo-purple rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-heading font-bold text-moveo-deep-blue mb-4">
+            Sesiones grupales personalizadas
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Grupos pequeños con ejercicios adaptados a las necesidades específicas de cada participante.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Máximo 6 personas por grupo
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Rutinas adaptadas individualmente
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Seguimiento personalizado
+            </li>
+          </ul>
+        </div>
+
+        <!-- Clases a Domicilio -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="w-16 h-16 bg-moveo-accent-blue rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-heading font-bold text-moveo-deep-blue mb-4">
+            Clases a domicilio
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Programas en casa para movilidad y autonomía. Ideal para personas con dificultades de movilización.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Comodidad del hogar
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Atención 100% personalizada
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Horarios flexibles
+            </li>
+          </ul>
+        </div>
+
+        <!-- Evaluación Inicial -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="w-16 h-16 bg-moveo-accent-red rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-heading font-bold text-moveo-deep-blue mb-4">
+            Evaluación inicial gratuita
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Diagnóstico completo de capacidades físicas y cognitivas para diseñar el programa ideal.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Evaluación física completa
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Test cognitivo básico
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-moveo-yellow mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Plan personalizado recomendado
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="bg-gray-50 rounded-xl p-8 lg:p-12 text-center">
+        <h2 class="text-3xl font-heading font-bold text-moveo-deep-blue mb-6">
+          Beneficios de nuestros programas
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8 text-lg text-gray-600">
+          <div>
+            <h4 class="font-semibold text-moveo-deep-blue mb-2">Mejora funcional</h4>
+            <p>Recuperación y mantenimiento de capacidades físicas</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-moveo-deep-blue mb-2">Reducción de dolor</h4>
+            <p>Alivio de molestias y mejora en la calidad de vida</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-moveo-deep-blue mb-2">Conexión social</h4>
+            <p>Fortalecimiento de vínculos y apoyo comunitario</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-16">
+        <h3 class="text-2xl font-heading font-bold text-moveo-deep-blue mb-6">
+          ¿Listo para comenzar tu programa personalizado?
+        </h3>
+        <WhatsAppButton class="text-lg px-8 py-4" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

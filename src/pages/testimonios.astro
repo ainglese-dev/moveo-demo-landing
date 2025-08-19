@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<BaseLayout title="Testimonios - MOVEO" description="Lee las historias de éxito de nuestros participantes y sus familias. Descubre cómo MOVEO ha transformado vidas.">
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-heading font-bold text-moveo-deep-blue mb-6">
+          Historias de éxito
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Conoce cómo MOVEO ha transformado la vida de adultos mayores y sus familias
+        </p>
+      </div>
+
+      <!-- Featured Testimonial -->
+      <div class="bg-gradient-to-br from-moveo-deep-blue to-moveo-bright-blue rounded-2xl p-8 lg:p-12 text-white mb-16">
+        <div class="max-w-4xl mx-auto text-center">
+          <svg class="w-12 h-12 text-moveo-yellow mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+          </svg>
+          <blockquote class="text-2xl lg:text-3xl font-heading italic mb-8">
+            "Desde que mi mamá atiende en Moveo, recuperó fuerza y volvió a caminar sin ayuda."
+          </blockquote>
+          <p class="text-lg font-semibold text-moveo-yellow">— María Elena, hija de participante</p>
+        </div>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-16">
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-moveo-yellow rounded-full flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-moveo-deep-blue" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-moveo-deep-blue">Carmen, 72 años</h3>
+              <p class="text-gray-500">Participante desde hace 8 meses</p>
+            </div>
+          </div>
+          <blockquote class="text-gray-600 italic mb-4">
+            "Antes tenía miedo de salir sola porque me sentía insegura al caminar. 
+            Ahora tengo más equilibrio y confianza. Incluso volví a bailar en las 
+            fiestas familiares."
+          </blockquote>
+          <div class="flex items-center text-sm text-gray-500">
+            <svg class="w-4 h-4 text-moveo-yellow mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Clases presenciales grupales
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-moveo-purple rounded-full flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-moveo-deep-blue">Roberto, 68 años</h3>
+              <p class="text-gray-500">Participante desde hace 1 año</p>
+            </div>
+          </div>
+          <blockquote class="text-gray-600 italic mb-4">
+            "Después del accidente pensé que nunca volvería a ser independiente. 
+            Con MOVEO he recuperado mucha movilidad y, lo más importante, 
+            he encontrado nuevos amigos que entienden mi proceso."
+          </blockquote>
+          <div class="flex items-center text-sm text-gray-500">
+            <svg class="w-4 h-4 text-moveo-yellow mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Sesiones grupales personalizadas
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-moveo-accent-blue rounded-full flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-moveo-deep-blue">Lucía, 75 años</h3>
+              <p class="text-gray-500">Clases a domicilio desde hace 6 meses</p>
+            </div>
+          </div>
+          <blockquote class="text-gray-600 italic mb-4">
+            "No podía salir de casa por problemas de movilidad. El profesional 
+            viene a mi hogar y hemos logrado que pueda levantarme y moverme 
+            mejor. Mi familia está muy agradecida."
+          </blockquote>
+          <div class="flex items-center text-sm text-gray-500">
+            <svg class="w-4 h-4 text-moveo-yellow mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Clases a domicilio
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-moveo-accent-red rounded-full flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-moveo-deep-blue">Jorge, hijo de participante</h3>
+              <p class="text-gray-500">Familiar de Esperanza, 78 años</p>
+            </div>
+          </div>
+          <blockquote class="text-gray-600 italic mb-4">
+            "Mamá estaba muy deprimida después de la muerte de papá. 
+            MOVEO no solo la ayudó físicamente, sino que le devolvió 
+            las ganas de vivir. Ahora está más activa que nunca."
+          </blockquote>
+          <div class="flex items-center text-sm text-gray-500">
+            <svg class="w-4 h-4 text-moveo-yellow mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Testimonio familiar
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact Stats -->
+      <div class="bg-gray-50 rounded-xl p-8 lg:p-12 mb-16">
+        <h2 class="text-3xl font-heading font-bold text-moveo-deep-blue mb-8 text-center">
+          Nuestro impacto en números
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-moveo-purple mb-2">95%</div>
+            <p class="text-lg text-gray-600">de participantes reportan mejora en movilidad</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-moveo-accent-blue mb-2">87%</div>
+            <p class="text-lg text-gray-600">experimentan reducción significativa del dolor</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-moveo-yellow mb-2">92%</div>
+            <p class="text-lg text-gray-600">se sienten más seguros y confiados</p>
+          </div>
+        </div>
+        <p class="text-center text-sm text-gray-500 mt-6">
+          *Datos basados en encuestas a participantes después de 6 meses de programa
+        </p>
+      </div>
+
+      <!-- Note about testimonials -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-16">
+        <div class="flex items-start">
+          <svg class="w-6 h-6 text-blue-600 mt-1 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <h3 class="text-lg font-semibold text-blue-800 mb-2">Nota sobre testimonios</h3>
+            <p class="text-blue-700">
+              Estos testimonios reflejan experiencias reales de nuestros participantes y sus familias. 
+              Los nombres han sido modificados para proteger la privacidad. Los resultados pueden 
+              variar según las condiciones individuales de cada persona.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <h2 class="text-3xl font-heading font-bold text-moveo-deep-blue mb-6">
+          ¿Quieres ser parte de estas historias de éxito?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Agenda tu consulta gratuita y comienza tu propia transformación.
+        </p>
+        <WhatsAppButton class="text-lg px-8 py-4" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
