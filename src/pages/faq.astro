@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<BaseLayout title="Preguntas Frecuentes - MOVEO" description="Encuentra respuestas a las preguntas más comunes sobre nuestros servicios de salud integral para adultos mayores.">
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900 transition-colors">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-heading font-bold text-moveo-deep-blue dark:text-moveo-yellow mb-6">
+          Preguntas Frecuentes
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Encuentra respuestas a las dudas más comunes sobre nuestros servicios y programas
+        </p>
+      </div>
+
+      <div class="space-y-4 mb-16">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-1"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿A quién están dirigidos los servicios de MOVEO?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-1" class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              Nuestros servicios están dirigidos a adultos mayores de 60 años y sus familias que buscan mantener o recuperar independencia física y mental. También trabajamos con personas que presentan condiciones de discapacidad física o deterioro cognitivo leve a moderado.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-2"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Necesito referencia médica para iniciar un programa?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-2" class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-300 mb-3">
+              No es necesaria una referencia médica para la evaluación inicial gratuita. Sin embargo, recomendamos traer el historial médico cuando sea aplicable, especialmente si existe alguna condición específica que debamos considerar.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300">
+              Si tienes condiciones médicas complejas, es recomendable consultar con tu médico antes de iniciar cualquier programa de actividad física.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-3"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Qué tipos de planes y membresías ofrecen?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-3" class="faq-content hidden px-6 pb-4">
+            <div class="text-gray-600 dark:text-gray-300 space-y-3">
+              <p><strong>Membresía mensual:</strong> Acceso ilimitado a clases grupales presenciales</p>
+              <p><strong>Paquetes por sesiones:</strong> Ideal para quienes prefieren flexibilidad</p>
+              <p><strong>Clases a domicilio:</strong> Tarifas por sesión individual</p>
+              <p><strong>Programas personalizados:</strong> Diseñados según necesidades específicas</p>
+              <p class="text-sm">Para conocer precios específicos y promociones vigentes, contáctanos directamente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-4"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Cómo funciona la evaluación inicial gratuita?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-4" class="faq-content hidden px-6 pb-4">
+            <div class="text-gray-600 dark:text-gray-300 space-y-3">
+              <p>La evaluación inicial incluye:</p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Evaluación física completa (equilibrio, fuerza, movilidad)</li>
+                <li>Test cognitivo básico</li>
+                <li>Análisis de necesidades y objetivos personales</li>
+                <li>Recomendación de programa personalizado</li>
+              </ul>
+              <p>Esta evaluación nos permite diseñar el programa más adecuado para cada persona.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-5"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Qué diferencia hay entre clases presenciales y a domicilio?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-5" class="faq-content hidden px-6 pb-4">
+            <div class="text-gray-600 dark:text-gray-300 space-y-3">
+              <p><strong>Clases presenciales:</strong></p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Grupos pequeños (máximo 6 personas)</li>
+                <li>Equipos especializados y seguros</li>
+                <li>Interacción social con otros participantes</li>
+                <li>Ubicación: Zona Norte de Bogotá</li>
+              </ul>
+              <p><strong>Clases a domicilio:</strong></p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Atención 100% personalizada</li>
+                <li>Comodidad del hogar</li>
+                <li>Horarios flexibles</li>
+                <li>Ideal para personas con dificultades de movilización</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-6"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Los familiares pueden participar en las consultas?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-6" class="faq-content hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-300">
+              ¡Por supuesto! Entendemos que los familiares son parte fundamental del proceso de bienestar del adulto mayor. Los hijos, nietos y cuidadores pueden participar en las consultas iniciales y recibir orientación sobre cómo apoyar el programa en casa. También atendemos solicitudes hechas directamente por familiares preocupados por el bienestar de sus seres queridos.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-7"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Qué resultados puedo esperar y en cuánto tiempo?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-7" class="faq-content hidden px-6 pb-4">
+            <div class="text-gray-600 dark:text-gray-300 space-y-3">
+              <p>Los resultados varían según cada persona, pero típicamente observamos:</p>
+              <p><strong>Primeras 2-4 semanas:</strong> Mejora en equilibrio y confianza</p>
+              <p><strong>1-3 meses:</strong> Aumento notable en fuerza y movilidad</p>
+              <p><strong>3-6 meses:</strong> Reducción significativa de dolor y mayor independencia</p>
+              <p><strong>6+ meses:</strong> Mejoras consolidadas y nuevos objetivos alcanzados</p>
+              <p class="text-sm italic">Los resultados dependen de la constancia, condición inicial y adherencia al programa.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+          <button 
+            class="faq-button w-full text-left px-6 py-4 focus:outline-none"
+            aria-expanded="false"
+            data-target="faq-8"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-moveo-deep-blue dark:text-moveo-yellow">
+                ¿Atienden personas con condiciones médicas específicas?
+              </h3>
+              <svg class="faq-icon w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
+          <div id="faq-8" class="faq-content hidden px-6 pb-4">
+            <div class="text-gray-600 dark:text-gray-300 space-y-3">
+              <p>Sí, tenemos experiencia trabajando con diversas condiciones:</p>
+              <ul class="list-disc list-inside space-y-1 ml-4">
+                <li>Artritis y dolor articular</li>
+                <li>Osteoporosis</li>
+                <li>Deterioro cognitivo leve</li>
+                <li>Problemas de equilibrio</li>
+                <li>Recuperación post-operatoria</li>
+                <li>Diabetes y hipertensión</li>
+              </ul>
+              <p>Cada programa se adapta a las necesidades específicas y limitaciones de cada persona, siempre bajo supervisión profesional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 lg:p-12 text-center transition-colors">
+        <h2 class="text-3xl font-heading font-bold text-moveo-deep-blue dark:text-moveo-yellow mb-6">
+          ¿Tienes más preguntas?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          Estamos aquí para ayudarte. Agenda tu consulta gratuita y resuelve todas tus dudas.
+        </p>
+        <WhatsAppButton class="text-lg px-8 py-4" />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // FAQ accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqButtons = document.querySelectorAll('.faq-button');
+      
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const content = document.getElementById(targetId);
+          const icon = this.querySelector('.faq-icon');
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other FAQ items
+          faqButtons.forEach(otherButton => {
+            if (otherButton !== this) {
+              const otherTargetId = otherButton.getAttribute('data-target');
+              const otherContent = document.getElementById(otherTargetId);
+              const otherIcon = otherButton.querySelector('.faq-icon');
+              
+              otherContent.classList.add('hidden');
+              otherIcon.classList.remove('rotate-180');
+              otherButton.setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Toggle current FAQ item
+          if (isExpanded) {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+            this.setAttribute('aria-expanded', 'false');
+          } else {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+        
+        // Keyboard navigation
+        button.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>
