@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from '../components/ThemeToggle.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -18,31 +20,71 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <title>{title}</title>
+    <script>
+      // Prevent flash of wrong theme
+      (function() {
+        function getThemePreference() {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+          }
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        const theme = getThemePreference();
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="font-sans text-body bg-white">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+  <body class="font-sans text-body bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
-            <a href="/" class="text-2xl font-heading font-bold text-moveo-deep-blue">
+            <a href="/" class="text-2xl font-heading font-bold text-moveo-deep-blue dark:text-moveo-yellow">
               MOVEO
             </a>
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <a href="/" class="text-gray-700 hover:text-moveo-deep-blue px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
-              <a href="/servicios" class="text-gray-700 hover:text-moveo-deep-blue px-3 py-2 rounded-md text-sm font-medium">Servicios</a>
-              <a href="/sobre" class="text-gray-700 hover:text-moveo-deep-blue px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
-              <a href="/testimonios" class="text-gray-700 hover:text-moveo-deep-blue px-3 py-2 rounded-md text-sm font-medium">Testimonios</a>
+              <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+              <a href="/servicios" class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Servicios</a>
+              <a href="/sobre" class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Sobre</a>
+              <a href="/testimonios" class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Testimonios</a>
               <a href="/contacto" class="bg-moveo-yellow text-moveo-deep-blue px-4 py-2 rounded-lg font-medium hover:bg-yellow-300 transition-colors">Contacto</a>
             </div>
           </div>
-          <div class="md:hidden">
-            <button type="button" class="text-gray-700 hover:text-moveo-deep-blue focus:outline-none focus:text-moveo-deep-blue">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+          <div class="flex items-center space-x-4">
+            <ThemeToggle />
+            <div class="md:hidden">
+              <button 
+                id="mobile-menu-button" 
+                type="button" 
+                class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow focus:outline-none transition-colors"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                aria-label="Toggle mobile menu"
+              >
+                <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-600">
+            <a href="/" class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Inicio</a>
+            <a href="/servicios" class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Servicios</a>
+            <a href="/sobre" class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Sobre</a>
+            <a href="/testimonios" class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Testimonios</a>
+            <a href="/contacto" class="block bg-moveo-yellow text-moveo-deep-blue px-3 py-2 rounded-md text-base font-medium hover:bg-yellow-300 transition-colors text-center mx-3 my-2">Contacto</a>
           </div>
         </div>
       </nav>
@@ -52,7 +94,7 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
       <slot />
     </main>
 
-    <footer class="bg-moveo-deep-blue text-white">
+    <footer class="bg-moveo-deep-blue dark:bg-gray-800 text-white transition-colors">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="text-center">
           <p class="text-lg font-heading font-semibold mb-2">© MOVEO — Salud integral para el adulto mayor</p>
@@ -64,5 +106,65 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
         </div>
       </div>
     </footer>
+    
+    <script>
+      // Mobile menu functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+          mobileMenuButton.addEventListener('click', function() {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle menu visibility
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle icons
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            
+            // Update aria attributes
+            mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
+          });
+          
+          // Close menu when clicking on a link
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              mobileMenu.classList.add('hidden');
+              hamburgerIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+          });
+          
+          // Close menu when clicking outside
+          document.addEventListener('click', function(event) {
+            const isClickInsideNav = mobileMenuButton.contains(event.target) || mobileMenu.contains(event.target);
+            
+            if (!isClickInsideNav && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              hamburgerIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Close menu on escape key
+          document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              hamburgerIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+              mobileMenuButton.focus();
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
