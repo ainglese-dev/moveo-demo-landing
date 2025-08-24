@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://ainglese-dev.github.io',
-  base: '/moveo-demo-landing',
+  base: process.env.NODE_ENV === 'production' ? '/moveo-demo-landing' : '/',
   integrations: [
     tailwind(),
     sitemap()

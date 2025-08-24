@@ -1,5 +1,8 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+import PromoBanner from '../components/PromoBanner.astro';
 
 export interface Props {
   title: string;
@@ -38,7 +41,10 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
     </script>
   </head>
   <body class="font-sans text-body bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
-    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors">
+    <!-- Promo Banner -->
+    <PromoBanner />
+    
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-40 transition-colors">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
@@ -108,6 +114,10 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
         </div>
       </div>
     </footer>
+
+    <!-- Floating components -->
+    <FloatingWhatsApp />
+    <ScrollToTop />
     
     <script>
       // Mobile menu functionality

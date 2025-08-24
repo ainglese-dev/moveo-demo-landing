@@ -1,0 +1,71 @@
+---
+// No props needed for this component
+---
+
+<button 
+  id="scroll-to-top" 
+  class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-moveo-deep-blue dark:bg-moveo-purple text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 opacity-0 invisible translate-y-4"
+  aria-label="Volver al inicio"
+>
+  <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+</button>
+
+<script>
+  // Scroll to top functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+    
+    if (scrollToTopButton) {
+      // Show/hide button based on scroll position
+      function toggleScrollButton() {
+        if (window.scrollY > 300) {
+          scrollToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+          scrollToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+        } else {
+          scrollToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+          scrollToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        }
+      }
+      
+      // Smooth scroll to top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Event listeners
+      window.addEventListener('scroll', toggleScrollButton);
+      scrollToTopButton.addEventListener('click', scrollToTop);
+      
+      // Keyboard accessibility
+      scrollToTopButton.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          scrollToTop();
+        }
+      });
+      
+      // Initial check
+      toggleScrollButton();
+    }
+  });
+</script>
+
+<style>
+  #scroll-to-top {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  #scroll-to-top:hover {
+    background-color: rgb(30, 64, 175);
+  }
+  
+  .dark #scroll-to-top:hover {
+    background-color: rgb(124, 58, 237);
+  }
+</style>
