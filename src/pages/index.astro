@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { createPath } from '../utils/path';
 ---
 
 <BaseLayout title="MOVEO - Salud integral para el adulto mayor">
@@ -74,7 +75,7 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="/servicios" class="inline-block bg-moveo-deep-blue dark:bg-moveo-purple text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-purple-600 transition-colors">
+        <a href={createPath('/servicios')} class="inline-block bg-moveo-deep-blue dark:bg-moveo-purple text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-purple-600 transition-colors">
           Conoce nuestros programas
         </a>
       </div>

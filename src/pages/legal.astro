@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { createPath } from '../utils/path';
 ---
 
 <BaseLayout title="Política de Privacidad - MOVEO" description="Conoce nuestra política de privacidad y tratamiento de datos según la normativa colombiana de Habeas Data.">
@@ -177,7 +178,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Back to Contact -->
       <div class="text-center mt-12">
         <a 
-          href="/contacto" 
+          href={createPath('/contacto')} 
           class="inline-flex items-center bg-moveo-deep-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

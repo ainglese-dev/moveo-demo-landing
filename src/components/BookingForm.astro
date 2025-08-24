@@ -1,4 +1,6 @@
 ---
+import { createPath } from '../utils/path';
+
 export interface Props {
   title?: string;
   subtitle?: string;
@@ -152,7 +154,7 @@ const FORM_FIELDS = {
         />
         <label for="consent" class="text-sm text-gray-700 dark:text-gray-300">
           <span class="text-red-500">*</span> Acepto que MOVEO use mis datos de contacto para responder a mi solicitud. 
-          He leído y acepto la <a href="/legal" class="text-moveo-bright-blue hover:underline">política de privacidad</a>.
+          He leído y acepto la <a href={createPath('/legal')} class="text-moveo-bright-blue hover:underline">política de privacidad</a>.
         </label>
       </div>
     </div>

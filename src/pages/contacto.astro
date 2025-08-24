@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import BookingForm from '../components/BookingForm.astro';
+import { createPath } from '../utils/path';
 ---
 
 <BaseLayout title="Contacto - MOVEO" description="Agenda tu consulta gratuita con MOVEO. Completa el formulario o contáctanos directamente por WhatsApp.">
@@ -67,10 +68,10 @@ import BookingForm from '../components/BookingForm.astro';
               </div>
             </div>
             <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600 space-y-2">
-              <a href="/faq" class="block text-moveo-bright-blue hover:underline font-medium">
+              <a href={createPath('/faq')} class="block text-moveo-bright-blue hover:underline font-medium">
                 Ver todas las preguntas frecuentes →
               </a>
-              <a href="/servicios" class="block text-moveo-bright-blue hover:underline font-medium">
+              <a href={createPath('/servicios')} class="block text-moveo-bright-blue hover:underline font-medium">
                 Ver todos nuestros servicios →
               </a>
             </div>
