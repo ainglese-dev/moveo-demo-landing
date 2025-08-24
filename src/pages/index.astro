@@ -1,13 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
-import { createPath } from '../utils/path';
+import { createPath, getAssetPath } from '../utils/path';
 ---
 
 <BaseLayout title="MOVEO - Salud integral para el adulto mayor">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-moveo-deep-blue to-moveo-bright-blue text-white py-20 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative text-white py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-moveo-deep-blue to-moveo-bright-blue">
+    <!-- Background GIF -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src={getAssetPath('output.gif')} 
+        alt="MOVEO background animation" 
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none'"
+      />
+      <!-- Overlay for text readability -->
+      <div class="absolute inset-0 bg-moveo-deep-blue/40"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h1 class="text-4xl lg:text-6xl font-heading font-bold mb-6">
           Moveo — salud integral para el adulto mayor
