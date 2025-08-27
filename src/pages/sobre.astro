@@ -1,13 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { getAssetPath } from '../utils/path';
 ---
 
 <BaseLayout title="Sobre MOVEO" description="Conoce a nuestro equipo profesional especializado en salud integral para adultos mayores. Más de 5 años de experiencia.">
   <section class="py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h1 class="text-4xl lg:text-5xl font-heading font-bold text-moveo-deep-blue mb-6">
+        <!-- MOVEO Slogan Logo -->
+        <div class="mb-8">
+          <img 
+            src={getAssetPath('moveo-isologo-slogan-full-color-azul-gr.png')} 
+            alt="MOVEO - mueves tu cuerpo ves cambiar tu vida"
+            class="h-16 md:h-20 lg:h-24 w-auto mx-auto dark:hidden"
+          />
+          <img 
+            src={getAssetPath('moveo-isologo-slogan-full-color-blanco-gr.png')} 
+            alt="MOVEO - mueves tu cuerpo ves cambiar tu vida"
+            class="h-16 md:h-20 lg:h-24 w-auto mx-auto hidden dark:block"
+          />
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-heading font-bold text-moveo-deep-blue dark:text-moveo-yellow mb-6">
           ¿Por qué confiar en Moveo?
         </h1>
       </div>

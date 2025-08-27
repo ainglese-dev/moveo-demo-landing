@@ -11,6 +11,14 @@ export interface Props {
 }
 
 const { title, description = "MOVEO - Salud integral para el adulto mayor en Bogotá" } = Astro.props;
+
+// Get current page path for active navigation highlighting
+const currentPath = Astro.url.pathname;
+const isActivePage = (path: string) => {
+  if (path === '/' && currentPath === '/') return true;
+  if (path !== '/' && currentPath.includes(path)) return true;
+  return false;
+};
 ---
 
 <!DOCTYPE html>
@@ -19,6 +27,7 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin" />
     <link rel="icon" href={getAssetPath('icono-corazon-full-color.png')} />
     <link rel="icon" type="image/png" sizes="32x32" href={getAssetPath('icono-corazon-full-color.png')} />
     <link rel="icon" type="image/png" sizes="192x192" href={getAssetPath('icono-corazon-full-color.png')} />
@@ -28,6 +37,42 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <title>{title}</title>
+    <style>
+      /* Page transition styles */
+      @view-transition {
+        navigation: auto;
+      }
+      
+      /* Custom fade transition */
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+      }
+      
+      ::view-transition-old(root) {
+        animation-name: fade-out;
+      }
+      
+      ::view-transition-new(root) {
+        animation-name: fade-in;
+      }
+      
+      @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      /* Smooth navigation link interactions */
+      a {
+        transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      }
+    </style>
     <script>
       // Prevent flash of wrong theme
       (function() {
@@ -68,12 +113,12 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <a href={createPath('/')} class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
-              <a href={createPath('/servicios')} class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Servicios</a>
-              <a href={createPath('/sobre')} class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Sobre</a>
-              <a href={createPath('/testimonios')} class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">Testimonios</a>
-              <a href={createPath('/faq')} class="text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-sm font-medium transition-colors">FAQ</a>
-              <a href={createPath('/contacto')} class="bg-moveo-yellow text-moveo-deep-blue px-4 py-2 rounded-lg font-medium hover:bg-yellow-300 transition-colors">Contacto</a>
+              <a href={createPath('/')} class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActivePage('/') ? 'text-moveo-deep-blue dark:text-moveo-yellow border-b-2 border-moveo-deep-blue dark:border-moveo-yellow font-semibold' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Inicio</a>
+              <a href={createPath('/servicios')} class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActivePage('/servicios') ? 'text-moveo-deep-blue dark:text-moveo-yellow border-b-2 border-moveo-deep-blue dark:border-moveo-yellow font-semibold' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Servicios</a>
+              <a href={createPath('/sobre')} class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActivePage('/sobre') ? 'text-moveo-deep-blue dark:text-moveo-yellow border-b-2 border-moveo-deep-blue dark:border-moveo-yellow font-semibold' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Sobre</a>
+              <a href={createPath('/testimonios')} class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActivePage('/testimonios') ? 'text-moveo-deep-blue dark:text-moveo-yellow border-b-2 border-moveo-deep-blue dark:border-moveo-yellow font-semibold' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Testimonios</a>
+              <a href={createPath('/faq')} class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActivePage('/faq') ? 'text-moveo-deep-blue dark:text-moveo-yellow border-b-2 border-moveo-deep-blue dark:border-moveo-yellow font-semibold' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>FAQ</a>
+              <a href={createPath('/contacto')} class={`${isActivePage('/contacto') ? 'bg-moveo-deep-blue dark:bg-moveo-purple text-white' : 'bg-moveo-yellow text-moveo-deep-blue hover:bg-yellow-300'} px-4 py-2 rounded-lg font-medium transition-colors`}>Contacto</a>
             </div>
           </div>
           <div class="flex items-center space-x-4">
@@ -101,12 +146,12 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
         <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden hidden">
           <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-600">
-            <a href={createPath('/')} class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Inicio</a>
-            <a href={createPath('/servicios')} class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Servicios</a>
-            <a href={createPath('/sobre')} class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Sobre</a>
-            <a href={createPath('/testimonios')} class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">Testimonios</a>
-            <a href={createPath('/faq')} class="block text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow px-3 py-2 rounded-md text-base font-medium transition-colors">FAQ</a>
-            <a href={createPath('/contacto')} class="block bg-moveo-yellow text-moveo-deep-blue px-3 py-2 rounded-md text-base font-medium hover:bg-yellow-300 transition-colors text-center mx-3 my-2">Contacto</a>
+            <a href={createPath('/')} class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActivePage('/') ? 'text-moveo-deep-blue dark:text-moveo-yellow bg-moveo-yellow/10 dark:bg-moveo-yellow/10 font-semibold border-l-4 border-moveo-deep-blue dark:border-moveo-yellow' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Inicio</a>
+            <a href={createPath('/servicios')} class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActivePage('/servicios') ? 'text-moveo-deep-blue dark:text-moveo-yellow bg-moveo-yellow/10 dark:bg-moveo-yellow/10 font-semibold border-l-4 border-moveo-deep-blue dark:border-moveo-yellow' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Servicios</a>
+            <a href={createPath('/sobre')} class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActivePage('/sobre') ? 'text-moveo-deep-blue dark:text-moveo-yellow bg-moveo-yellow/10 dark:bg-moveo-yellow/10 font-semibold border-l-4 border-moveo-deep-blue dark:border-moveo-yellow' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Sobre</a>
+            <a href={createPath('/testimonios')} class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActivePage('/testimonios') ? 'text-moveo-deep-blue dark:text-moveo-yellow bg-moveo-yellow/10 dark:bg-moveo-yellow/10 font-semibold border-l-4 border-moveo-deep-blue dark:border-moveo-yellow' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>Testimonios</a>
+            <a href={createPath('/faq')} class={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActivePage('/faq') ? 'text-moveo-deep-blue dark:text-moveo-yellow bg-moveo-yellow/10 dark:bg-moveo-yellow/10 font-semibold border-l-4 border-moveo-deep-blue dark:border-moveo-yellow' : 'text-gray-700 dark:text-gray-300 hover:text-moveo-deep-blue dark:hover:text-moveo-yellow'}`}>FAQ</a>
+            <a href={createPath('/contacto')} class={`block px-3 py-2 rounded-md text-base font-medium transition-colors text-center mx-3 my-2 ${isActivePage('/contacto') ? 'bg-moveo-deep-blue dark:bg-moveo-purple text-white' : 'bg-moveo-yellow text-moveo-deep-blue hover:bg-yellow-300'}`}>Contacto</a>
           </div>
         </div>
       </nav>
@@ -191,6 +236,36 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
           });
         }
       });
+      
+      // Page transition handling
+      if ('startViewTransition' in document) {
+        // Modern browsers with View Transitions API
+        const originalPushState = history.pushState;
+        const originalReplaceState = history.replaceState;
+        
+        history.pushState = function(...args) {
+          document.startViewTransition(() => {
+            originalPushState.apply(history, args);
+          });
+        };
+        
+        history.replaceState = function(...args) {
+          document.startViewTransition(() => {
+            originalReplaceState.apply(history, args);
+          });
+        };
+      } else {
+        // Fallback for browsers without View Transitions API
+        document.body.style.transition = 'opacity 0.3s ease-in-out';
+        
+        document.addEventListener('beforeunload', function() {
+          document.body.style.opacity = '0';
+        });
+        
+        window.addEventListener('pageshow', function() {
+          document.body.style.opacity = '1';
+        });
+      }
     </script>
   </body>
 </html>
