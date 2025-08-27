@@ -19,7 +19,11 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href={getAssetPath('favicon.svg')} />
+    <link rel="icon" href={getAssetPath('icono-corazon-full-color.png')} />
+    <link rel="icon" type="image/png" sizes="32x32" href={getAssetPath('icono-corazon-full-color.png')} />
+    <link rel="icon" type="image/png" sizes="192x192" href={getAssetPath('icono-corazon-full-color.png')} />
+    <link rel="icon" type="image/png" sizes="512x512" href={getAssetPath('icono-corazon-full-color.png')} />
+    <link rel="apple-touch-icon" sizes="180x180" href={getAssetPath('icono-corazon-full-color.png')} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -49,8 +53,17 @@ const { title, description = "MOVEO - Salud integral para el adulto mayor en Bog
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
-            <a href={createPath('/')} class="text-2xl font-heading font-bold text-moveo-deep-blue dark:text-moveo-yellow">
-              MOVEO
+            <a href={createPath('/')} class="flex items-center">
+              <img 
+                src={getAssetPath('isologo-full-color.png')} 
+                alt="MOVEO"
+                class="h-8 w-auto dark:hidden"
+              />
+              <img 
+                src={getAssetPath('isologo-blanco.png')} 
+                alt="MOVEO"
+                class="h-8 w-auto hidden dark:block"
+              />
             </a>
           </div>
           <div class="hidden md:block">
